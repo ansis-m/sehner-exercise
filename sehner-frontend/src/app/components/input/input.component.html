@@ -1,0 +1,57 @@
+<br>
+<button class="left-margin" mat-raised-button color="warn" (click)="search()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Submit Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<br>
+<br>
+<div class="left-margin">
+  <mat-form-field>
+    <mat-label>Search by Field</mat-label>
+    <mat-select [(value)]="searchBy" >
+      <mat-option>None</mat-option>
+      <mat-option value="id">id</mat-option>
+      <mat-option value="name">name</mat-option>
+      <mat-option value="website">website</mat-option>
+      <mat-option value="category">category</mat-option>
+      <mat-option value="foundedOn">foundedOn</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="left-margin">
+<mat-form-field>
+  <mat-label>Search string/substring</mat-label>
+  <textarea matInput [(ngModel)]="searchValue"></textarea>
+</mat-form-field>
+</div>
+<div class="left-margin">
+  <mat-form-field>
+    <mat-label>Sort by Field</mat-label>
+    <mat-select [(value)]="sortBy">
+      <mat-option>None</mat-option>
+      <mat-option value="id">id</mat-option>
+      <mat-option value="name">name</mat-option>
+      <mat-option value="revenue">revenue</mat-option>
+      <mat-option value="website">website</mat-option>
+      <mat-option value="category">category</mat-option>
+      <mat-option value="foundedOn">foundedOn</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="left-margin">
+  <section class="">
+    <mat-radio-group [(ngModel)]="ascending">
+      <mat-radio-button [color]="color" class="example-margin" value="true">Asc</mat-radio-button>
+      <mat-radio-button [color]="color" class="example-margin" value="false">Desc</mat-radio-button>
+    </mat-radio-group>
+  </section>
+</div>
+<div class="left-margin">
+  <mat-form-field class="example-full-width">
+    <mat-label>Revenue min value</mat-label>
+    <input type="number" matInput [(ngModel)]="minRevenue">
+  </mat-form-field>
+</div>
+<div class="left-margin">
+  <mat-form-field class="example-full-width">
+    <mat-label>Revenue max value</mat-label>
+    <input type="number" matInput [(ngModel)]="maxRevenue">
+  </mat-form-field>
+</div>

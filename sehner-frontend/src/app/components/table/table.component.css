@@ -1,0 +1,16 @@
+
+.table {
+  max-height: calc(70vh);
+  overflow-y: auto;
+
+  max-width: calc(100vw - 330px);
+  overflow-x: auto;
+}
+
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+
+

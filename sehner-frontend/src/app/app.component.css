@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* or any desired height */
+  align-items: center;
+  justify-content: center; /* center content vertically */
+  margin: 0 30px; /* add margin to the screen sides *//* center content horizontally */
+}
+
+.header-container {
+  margin-top: 70px; /* Add desired top margin */
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* center columns horizontally */
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-column {
+  margin-right: 1%; /* add margin between the left column and the right column */
+}
+
+.right-column {
+  margin-left: 1%; /* add margin between the right column and the left column */
+}
+
+/* Adjust the width and height of the header component as per your needs */
+app-header {
+  width: 100%;
+  height: 100px; /* or any desired height */
+  background-color: #ccc; /* or any desired background color */
+}

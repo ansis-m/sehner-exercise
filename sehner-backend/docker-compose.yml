@@ -1,0 +1,45 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5555:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: sehner
+      POSTGRES_DB: sehner
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  app:
+    image: ansism/sehnerbackend:latest
+    ports:
+      - "8089:8089"
+    depends_on:
+      - postgres
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 5
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  frontend:
+    image: ansism/sehnerfrontend:latest
+    ports:
+      - "4200:80"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  pgdata:
